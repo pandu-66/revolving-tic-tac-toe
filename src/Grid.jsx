@@ -24,11 +24,6 @@ export default function Grid({gridSize, players, winner, setWinner}) {
 
         if(checkWin(row, col, board)){
             setWinner(players[active]);
-            // setTimeout(()=>{
-            //     setBoard(Array.from({ length: gridSize }, () => Array(gridSize).fill(null)));
-            //     setWinner(null);
-            //     setTrackIndxs([]);
-            // }, 3000);
         }
         setActive((prevAct)=> (prevAct+1)%players.length);
     }
