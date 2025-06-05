@@ -37,7 +37,7 @@ export default function Grid({gridSize, players, winner, setWinner}) {
 
     return (
         <>
-        <div className="Grid" style={{gridTemplateColumns:`repeat(${gridSize}, 80px)`}}>
+        <div className="Grid" style={{gridTemplateColumns:`repeat(${gridSize}, 4rem)`}}>
             {board.map((r, idx) =>
             r.map((c, idx1) => <GridBox key={`${idx} ${idx1}`} id={`${idx} ${idx1}`} value={board[idx][idx1]} onClick={onSelect}
             shouldFade={(trackIndxs.length==players.length*3)&&(trackIndxs[0][0]===idx)&&(trackIndxs[0][1]===idx1)} />))}
