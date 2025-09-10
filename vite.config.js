@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: '/revolving-tic-tac-toe/',
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-})
+  base: mode === 'production-gh' 
+    ? '/revolving-tic-tac-toe/'   // for GitHub Pages
+    : './',                       // for Vercel or local
+}));
